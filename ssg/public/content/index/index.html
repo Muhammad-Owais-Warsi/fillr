@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index | My Portfolio</title>
+    <meta name="description" content="A blazing fast static site built with Rust">
+    
+    <meta property="og:title" content="index">
+    <meta property="og:description" content="A blazing fast static site built with Rust">
+    <meta property="og:type" content="website">
+    <link rel="alternate" type="application/rss+xml" title="My Portfolio RSS Feed" href="http:&#x2F;&#x2F;localhost:8080/feed.xml">
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        // Live reload WebSocket
+        (function() {
+            try {
+                const ws = new WebSocket('ws://localhost:8081');
+                ws.onmessage = function(event) {
+                    if (event.data === 'reload') {
+                        location.reload();
+                    }
+                };
+                ws.onclose = function() {
+                    setTimeout(function() {
+                        try {
+                            new WebSocket('ws://localhost:8081');
+                        } catch(e) {}
+                    }, 1000);
+                };
+            } catch(e) {}
+        })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <nav class="main-nav">
+                <a href="/" class="site-logo">My Portfolio</a>
+                <ul class="nav-links">
+                    <li><a href="/posts/">Blog</a></li>
+                    <li><a href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="site-main">
+            
+<article class="page">
+    <header class="page-header">
+        <h1 class="page-title">index</h1>
+        
+    </header>
+    
+    
+    
+    <div class="page-content content">
+        <h1>Hello, I'm a Developer</h1>
+<p>Welcome to my portfolio. I build fast, modern websites using Rust.</p>
+<h2>What I Do</h2>
+<ul>
+<li>Web Development</li>
+<li>Static Site Generators</li>
+<li>Performance Optimization</li>
+</ul>
+<h2>Recent Projects</h2>
+<p>Check out my <a href="/projects">projects</a> page to see what I've been working on.</p>
+<h2>Latest Posts</h2>
+<ul>
+<li><a href="/posts/getting-started">Getting Started with Rust</a></li>
+<li><a href="/posts/static-sites">Why I Switched to Static Sites</a></li>
+</ul>
+
+    </div>
+    
+    
+</article>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/feed.xml">RSS</a>
+                    <a href="/sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getting-started | My Portfolio</title>
+    <meta name="description" content="A blazing fast static site built with Rust">
+    
+    <meta property="og:title" content="getting-started">
+    <meta property="og:description" content="A blazing fast static site built with Rust">
+    <meta property="og:type" content="website">
+    <link rel="alternate" type="application/rss+xml" title="My Portfolio RSS Feed" href="http:&#x2F;&#x2F;localhost:8080/feed.xml">
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        // Live reload WebSocket
+        (function() {
+            try {
+                const ws = new WebSocket('ws://localhost:8081');
+                ws.onmessage = function(event) {
+                    if (event.data === 'reload') {
+                        location.reload();
+                    }
+                };
+                ws.onclose = function() {
+                    setTimeout(function() {
+                        try {
+                            new WebSocket('ws://localhost:8081');
+                        } catch(e) {}
+                    }, 1000);
+                };
+            } catch(e) {}
+        })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <nav class="main-nav">
+                <a href="/" class="site-logo">My Portfolio</a>
+                <ul class="nav-links">
+                    <li><a href="/posts/">Blog</a></li>
+                    <li><a href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="site-main">
+            
+<article class="page">
+    <header class="page-header">
+        <h1 class="page-title">getting-started</h1>
+        
+    </header>
+    
+    
+    
+    <div class="page-content content">
+        <h1>Getting Started with Rust</h1>
+<p>Rust is a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety.</p>
+<h2>Why Rust?</h2>
+<ol>
+<li><strong>Memory safety</strong> - No null pointer exceptions</li>
+<li><strong>Concurrency</strong> - Safe parallel programming</li>
+<li><strong>Speed</strong> - Comparable to C/C++</li>
+<li><strong>Tooling</strong> - Cargo is amazing</li>
+</ol>
+<h2>Installation</h2>
+<pre><code class="language-bash">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+<h2>Your First Program</h2>
+<pre><code class="language-rust">fn main() {
+    println!(&quot;Hello, world!&quot;);
+}
+</code></pre>
+<p>That's it! You're ready to start your Rust journey.</p>
+
+    </div>
+    
+    
+</article>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/feed.xml">RSS</a>
+                    <a href="/sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

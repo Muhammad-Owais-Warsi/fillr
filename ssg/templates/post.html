@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">{{ title }}</h1>
+        <div class="post-meta">
+            {% if date %}
+            <time class="post-date" datetime="{{ date }}">{{ date }}</time>
+            {% endif %}
+            {% if tags %}
+            <span class="post-tags">
+                {% for tag in tags %}
+                <a href="/tags/{{ tag | lower }}/" class="tag">{{ tag }}</a>
+                {% endfor %}
+            </span>
+            {% endif %}
+        </div>
+    </header>
+    
+    {% if description %}
+    <div class="post-excerpt">
+        <p>{{ description }}</p>
+    </div>
+    {% endif %}
+    
+    <div class="post-content content">
+        {{ content | safe }}
+    </div>
+    
+    <nav class="post-nav">
+        {% if collections.posts %}
+        <a href="/posts/" class="back-link">&larr; All Posts</a>
+        {% endif %}
+    </nav>
+</article>
+{% endblock %}

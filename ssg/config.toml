@@ -1,0 +1,11 @@
+title = "My Portfolio"
+description = "A blazing fast static site built with Rust"
+base_url = "http://localhost:8080"
+output_dir = "public"
+content_dir = "content"
+assets_dir = "assets"
+templates_dir = "templates"
+
+[build]
+drafts = true
+future = true

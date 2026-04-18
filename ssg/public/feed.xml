@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>My Portfolio</title>
+    <description>A blazing fast static site built with Rust</description>
+    <link>http://localhost:8080</link>
+    <atom:link href="http://localhost:8080/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+        <title>getting-started</title>
+        <description></description>
+        <link>http://localhost:8080/posts/getting-started/</link>
+        <guid>http://localhost:8080/posts/getting-started/</guid>
+    </item>
+    <item>
+        <title>static-sites</title>
+        <description></description>
+        <link>http://localhost:8080/posts/static-sites/</link>
+        <guid>http://localhost:8080/posts/static-sites/</guid>
+    </item>
+</channel>
+</rss>

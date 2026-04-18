@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article class="page">
+    <header class="page-header">
+        <h1 class="page-title">{{ title }}</h1>
+        {% if date %}
+        <time class="page-date">{{ date }}</time>
+        {% endif %}
+    </header>
+    
+    {% if description %}
+    <p class="page-description">{{ description }}</p>
+    {% endif %}
+    
+    <div class="page-content content">
+        {{ content | safe }}
+    </div>
+    
+    {% if tags %}
+    <footer class="page-footer">
+        <div class="tags">
+            {% for tag in tags %}
+            <a href="/tags/{{ tag | lower }}/" class="tag">{{ tag }}</a>
+            {% endfor %}
+        </div>
+    </footer>
+    {% endif %}
+</article>
+{% endblock %}

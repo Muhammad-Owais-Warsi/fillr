@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content | My Portfolio</title>
+    <meta name="description" content="A blazing fast static site built with Rust">
+    
+    <meta property="og:title" content="content">
+    <meta property="og:description" content="A blazing fast static site built with Rust">
+    <meta property="og:type" content="website">
+    <link rel="alternate" type="application/rss+xml" title="My Portfolio RSS Feed" href="http:&#x2F;&#x2F;localhost:8080/feed.xml">
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        // Live reload WebSocket
+        (function() {
+            try {
+                const ws = new WebSocket('ws://localhost:8081');
+                ws.onmessage = function(event) {
+                    if (event.data === 'reload') {
+                        location.reload();
+                    }
+                };
+                ws.onclose = function() {
+                    setTimeout(function() {
+                        try {
+                            new WebSocket('ws://localhost:8081');
+                        } catch(e) {}
+                    }, 1000);
+                };
+            } catch(e) {}
+        })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <nav class="main-nav">
+                <a href="/" class="site-logo">My Portfolio</a>
+                <ul class="nav-links">
+                    <li><a href="/posts/">Blog</a></li>
+                    <li><a href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="site-main">
+            
+<section class="collection collection-content">
+    <header class="collection-header">
+        <h1 class="collection-title">content</h1>
+        
+    </header>
+    
+    
+    <div class="collection-list">
+    
+        <article class="collection-item">
+            <a href="/content/index/" class="item-link">
+                <h2 class="item-title">index</h2>
+            </a>
+            
+            
+        </article>
+    
+        <article class="collection-item">
+            <a href="/content/pag1/" class="item-link">
+                <h2 class="item-title">pag1</h2>
+            </a>
+            
+            
+        </article>
+    
+        <article class="collection-item">
+            <a href="/content/page2/" class="item-link">
+                <h2 class="item-title">page2</h2>
+            </a>
+            
+            
+        </article>
+    
+        <article class="collection-item">
+            <a href="/content/page3/" class="item-link">
+                <h2 class="item-title">page3</h2>
+            </a>
+            
+            
+        </article>
+    
+    </div>
+    
+</section>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/feed.xml">RSS</a>
+                    <a href="/sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

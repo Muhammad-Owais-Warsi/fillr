@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Fillr",
   "version": "1.0",
-  "description": "Type 'Ctr + =' in any input to trigger a snippet autocomplete menu.",
+  "description": "Type 'Ctrl + ;' in any input to trigger a snippet autocomplete menu.",
   "permissions": ["storage", "activeTab"],
   "action": {
     "default_popup": "popup.html"

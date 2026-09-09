@@ -37,7 +37,7 @@ document.addEventListener("focusin", (e) => {
 document.addEventListener("keydown", (e) => {
   if (!activeInput) return;
 
-  if (e.key === "=" && !isActive && (e.ctrlKey || e.metaKey)) {
+  if ((e.key === ";" || e.code === "Semicolon") && !isActive && (e.ctrlKey || e.metaKey)) {
     isActive = true;
     query = "";
     selectedIndex = 0;
@@ -73,7 +73,7 @@ document.addEventListener("keydown", (e) => {
       renderPopup();
     }
     e.preventDefault();
-  } else if (e.key.length === 1 && e.key !== "=") {
+  } else if (e.key.length === 1 && e.key !== ";" && e.code !== "Semicolon") {
     e.preventDefault();
     query += e.key.toLowerCase();
     filterItems();

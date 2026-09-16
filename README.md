@@ -15,3 +15,9 @@ stop finding and copy pasting the same links everytime. press `ctrl + ;` in any 
 - click the icon, add key + value (e.g. `github` → your url)
 - in any form, press `ctrl + ;`, type to filter, `↑↓` to move, `enter` to paste
 - export / import your snippets as json from the popup footer
+
+## demo
+
+
+https://github.com/user-attachments/assets/151045ce-eac4-4aec-8e6f-160135432af9
+

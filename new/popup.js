@@ -3,6 +3,9 @@ const valInput = document.getElementById("val");
 const saveBtn = document.getElementById("saveBtn");
 const snippetList = document.getElementById("snippetList");
 const snippetCount = document.getElementById("snippet-count");
+const exportBtn = document.getElementById("exportBtn");
+const importBtn = document.getElementById("importBtn");
+const importFile = document.getElementById("importFile");
 
 document.addEventListener("DOMContentLoaded", loadSnippets);
 
@@ -100,3 +103,51 @@ function notifyAllTabs() {
     });
   });
 }
+
+exportBtn.onclick = () => {
+  chrome.storage.local.get("myAppData", (res) => {
+    const data = res.myAppData || {};
+    const blob = new Blob([JSON.stringify(data, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "fillr-snippets.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+};
+
+importBtn.onclick = () => importFile.click();
+
+importFile.onchange = () => {
+  const file = importFile.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const parsed = JSON.parse(reader.result);
+      if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+        throw new Error("invalid format");
+      }
+      const clean = {};
+      Object.entries(parsed).forEach(([k, v]) => {
+        if (typeof k === "string" && k.trim() && typeof v === "string") {
+          clean[k.trim()] = v;
+        }
+      });
+      chrome.storage.local.get("myAppData", (res) => {
+        const data = { ...(res.myAppData || {}), ...clean };
+        chrome.storage.local.set({ myAppData: data }, () => {
+          importFile.value = "";
+          loadSnippets();
+          notifyAllTabs();
+        });
+      });
+    } catch {
+      importFile.value = "";
+    }
+  };
+  reader.readAsText(file);
+};

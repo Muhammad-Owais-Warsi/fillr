@@ -235,6 +235,33 @@
                 font-size: 11px;
                 letter-spacing: 0.06em;
             }
+
+            /* ── FOOTER ── */
+            .footer {
+                padding: 10px 16px;
+                border-top: 1px solid #d0d0d0;
+                display: flex;
+                gap: 8px;
+            }
+
+            #importBtn,
+            #exportBtn {
+                flex: 1;
+                background: #fff;
+                color: #111;
+                border: 1px solid #d0d0d0;
+                padding: 7px 0;
+                font-family: "IBM Plex Mono", monospace;
+                font-size: 10px;
+                letter-spacing: 0.08em;
+                cursor: pointer;
+            }
+
+            #importBtn:hover,
+            #exportBtn:hover {
+                border-color: #111;
+                background: #fafafa;
+            }
         </style>
     </head>
     <body>
@@ -268,6 +295,17 @@
         </div>
 
         <div id="snippetList"></div>
+
+        <div class="footer">
+            <button id="exportBtn">EXPORT</button>
+            <button id="importBtn">IMPORT</button>
+            <input
+                type="file"
+                id="importFile"
+                accept=".json,application/json"
+                hidden
+            />
+        </div>
 
         <script src="popup.js"></script>
     </body>

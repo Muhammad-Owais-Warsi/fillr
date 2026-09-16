@@ -113,7 +113,7 @@ exportBtn.onclick = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "fillr-snippets.json";
+    a.download = "pop-snippets.json";
     a.click();
     URL.revokeObjectURL(url);
   });

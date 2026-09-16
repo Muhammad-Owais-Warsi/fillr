@@ -111,7 +111,7 @@ function showPopup() {
   if (popup) popup.remove();
 
   popup = document.createElement("div");
-  popup.className = "equals-popup";
+  popup.className = "pop-popup";
 
   // Render off-screen first so we can measure its real height
   popup.style.cssText =

@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Fillr",
+  "name": "pop",
   "version": "1.0",
   "description": "Type 'Ctrl + ;' in any input to trigger a snippet autocomplete menu.",
   "permissions": ["storage", "activeTab"],

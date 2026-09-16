@@ -1,4 +1,4 @@
-.equals-popup {
+.pop-popup {
     position: fixed;
     background: #fff;
     color: #111;
@@ -9,7 +9,7 @@
     z-index: 999999999;
 }
 
-.equals-popup .popup-header {
+.pop-popup .popup-header {
     padding: 6px 10px;
     border-bottom: 1px solid #d0d0d0;
     color: #999;
@@ -17,7 +17,7 @@
     letter-spacing: 0.04em;
 }
 
-.equals-popup .item {
+.pop-popup .item {
     padding: 8px 10px;
     cursor: default;
     border-bottom: 1px solid #ebebeb;
@@ -26,16 +26,16 @@
     align-items: center;
 }
 
-.equals-popup .item:last-child {
+.pop-popup .item:last-child {
     border-bottom: none;
 }
 
-.equals-popup .item.active {
+.pop-popup .item.active {
     background: #111;
     color: #fff;
 }
 
-.equals-popup .item-hint {
+.pop-popup .item-hint {
     font-size: 10px;
     color: #bbb;
     max-width: 110px;
@@ -44,11 +44,11 @@
     white-space: nowrap;
 }
 
-.equals-popup .item.active .item-hint {
+.pop-popup .item.active .item-hint {
     color: #888;
 }
 
-.equals-popup .nav-hints {
+.pop-popup .nav-hints {
     padding: 5px 10px;
     border-top: 1px solid #d0d0d0;
     background: #f7f7f7;
